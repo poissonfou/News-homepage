@@ -1,0 +1,283 @@
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft--red: hsl(5, 85%, 63%);
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark--grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#header-desktop {
+  display: none;
+}
+
+[aria-label="open menu"] {
+  width: 60px;
+}
+
+.nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 60vw;
+  background-color: var(--off-white);
+  padding: 2rem 1.5rem;
+  text-align: end;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+}
+
+.nav__links {
+  list-style: none;
+  margin-top: 6rem;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.nav__link {
+  margin: 2rem 0rem;
+}
+
+.nav__link:hover {
+  cursor: pointer;
+  color: var(--soft--red);
+}
+
+.main {
+  margin-top: 3rem;
+}
+
+.main__article {
+  height: calc(100vh - 7rem);
+}
+
+.article__banner {
+  background-image: url(assets/images/image-web-3-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 40vh;
+}
+
+.article__title {
+  margin: 1rem 0rem;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.article__desc {
+  color: var(--dark--grayish-blue);
+  line-height: 1.7rem;
+  margin-bottom: 2rem;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.article__link {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 800;
+  background-color: var(--soft--red);
+  border: none;
+  padding: 1rem 2rem;
+}
+
+.article__link:hover {
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+  cursor: pointer;
+}
+
+.main__new {
+  background-color: var(--very-dark-blue);
+  padding: 1.5rem;
+}
+
+.new__title {
+  color: var(--soft-orange);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.new__article {
+  padding-bottom: 2rem;
+  border-bottom: solid 1px var(--grayish-blue);
+  margin-top: 2rem;
+}
+
+.new__article:last-child {
+  border: none;
+  padding-bottom: 0rem;
+}
+
+.new__article__title {
+  color: var(--off-white);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.new__article__title:hover {
+  color: var(--soft-orange);
+  cursor: pointer;
+}
+
+.new__article__desc {
+  color: var(--grayish-blue);
+  line-height: 1.8rem;
+  font-size: 15px;
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 4rem 0rem;
+}
+
+.popular__article {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.popular__article__img {
+  height: 8rem;
+}
+
+.popular__article__number {
+  color: var(--soft--red);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.popular__article__title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin: 0.5rem 0rem;
+}
+
+.popular__article__title:hover {
+  cursor: pointer;
+  color: var(--soft--red);
+}
+
+.popular__article__desc {
+  line-height: 1.5rem;
+  color: var(--dark--grayish-blue);
+  font-size: 15px;
+}
+
+@media (min-width: 35rem) {
+  body {
+    padding: 2rem 10vw;
+    padding-bottom: 1rem;
+  }
+
+  #header-mobile {
+    display: none;
+  }
+
+  #header-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    position: static;
+    transform: none;
+    height: auto;
+    padding: 0;
+    width: fit-content;
+  }
+
+  .nav__links {
+    margin-top: 0rem;
+    display: flex;
+  }
+
+  .nav__link {
+    margin: 0;
+    margin-left: 3rem;
+    font-size: 1rem;
+  }
+
+  .main__container {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .main__article {
+    height: auto;
+  }
+
+  .article__banner {
+    background-image: url(assets/images/image-web-3-desktop.jpg);
+    height: 55%;
+  }
+
+  .article__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-top: 1rem;
+  }
+
+  .article__title {
+    font-size: 3.5rem;
+
+    margin: 0;
+  }
+
+  .article__desc {
+    font-size: 15px;
+    line-height: 1.8rem;
+  }
+
+  .article__link {
+    font-size: 0.8rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .main__new {
+    height: fit-content;
+  }
+
+  .new__title {
+    font-size: 2.5rem;
+  }
+
+  .new__article {
+    margin-top: 1.5rem;
+  }
+
+  .popular {
+    flex-direction: row;
+    margin: 0;
+    margin-top: 3rem;
+  }
+
+  .popular__article__img {
+    height: 7.5rem;
+  }
+}
