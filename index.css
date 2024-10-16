@@ -2,7 +2,7 @@
   --soft-orange: hsl(35, 77%, 62%);
   --soft--red: hsl(5, 85%, 63%);
   --off-white: hsl(36, 100%, 99%);
-  --grayish-blue: hsl(233, 8%, 79%);
+  --grayish-blue: rgb(197, 198, 206);
   --dark--grayish-blue: hsl(236, 13%, 42%);
   --very-dark-blue: hsl(240, 100%, 5%);
 }
@@ -17,6 +17,15 @@
 body {
   overflow-x: hidden;
   padding: 2rem 1rem;
+}
+
+.overlay {
+  position: absolute;
+  background-color: rgba(141, 142, 148, 0.5);
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .header {
@@ -34,6 +43,7 @@ body {
 
 .nav {
   position: absolute;
+  z-index: 2;
   right: 0;
   top: 0;
   height: 100%;
@@ -63,10 +73,6 @@ body {
 
 .main {
   margin-top: 3rem;
-}
-
-.main__article {
-  height: calc(100vh - 7rem);
 }
 
 .article__banner {
@@ -110,6 +116,7 @@ body {
 .main__new {
   background-color: var(--very-dark-blue);
   padding: 1.5rem;
+  margin-top: 4rem;
 }
 
 .new__title {
@@ -186,10 +193,13 @@ body {
   font-size: 15px;
 }
 
-@media (min-width: 35rem) {
+#bottom-new-section {
+  display: none;
+}
+
+@media (min-width: 50rem) {
   body {
-    padding: 2rem 10vw;
-    padding-bottom: 1rem;
+    padding: 1rem 10vw;
   }
 
   #header-mobile {
@@ -221,63 +231,76 @@ body {
     font-size: 1rem;
   }
 
-  .main__container {
+  .article__banner {
+    background-image: url(assets/images/image-web-3-desktop.jpg);
+  }
+}
+
+@media (min-width: 65rem) {
+  .others__container {
     display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
   }
 
-  .main__article {
-    height: auto;
+  #top-new-section {
+    display: none;
+  }
+
+  #bottom-new-section {
+    display: block;
+  }
+
+  .main__new {
+    margin: 0;
+  }
+
+  .popular {
+    margin: 0;
+  }
+}
+
+@media (min-width: 80rem) {
+  body {
+    padding: 1rem 11vw;
+  }
+
+  .main__container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  #top-new-section {
+    display: block;
+  }
+
+  #bottom-new-section {
+    display: none;
   }
 
   .article__banner {
-    background-image: url(assets/images/image-web-3-desktop.jpg);
-    height: 55%;
+    height: 50%;
   }
 
   .article__info {
     display: flex;
-    justify-content: space-between;
-    align-items: end;
-    margin-top: 1rem;
   }
 
   .article__title {
-    font-size: 3.5rem;
+    font-size: 3rem;
+    width: 19rem;
+  }
 
-    margin: 0;
+  .article__descbox {
+    margin: 1rem 0rem;
   }
 
   .article__desc {
-    font-size: 15px;
-    line-height: 1.8rem;
-  }
-
-  .article__link {
-    font-size: 0.8rem;
-    padding: 1rem 2.5rem;
-  }
-
-  .main__new {
-    height: fit-content;
-  }
-
-  .new__title {
-    font-size: 2.5rem;
-  }
-
-  .new__article {
-    margin-top: 1.5rem;
+    width: 20rem;
   }
 
   .popular {
     flex-direction: row;
-    margin: 0;
-    margin-top: 3rem;
-  }
-
-  .popular__article__img {
-    height: 7.5rem;
   }
 }
